@@ -91,3 +91,104 @@ if(selectedAns === question[0].correctAnswer) {
 //go back btbn anchor that references index.html
 //clear btn find method to clear local storage
 
+
+
+
+
+
+// we need to hold what the questions are, what the possible answers are, and what the correct answers is
+
+//we'll need a timer
+//hold a count variable
+
+//will need button and event listener for that button
+
+//display question with current questions possible answers as buttons
+
+
+//event listeners on possible answers button
+
+//wrong/right answer display message "wrong/right" in a div underneath the buttons
+
+//then move on to next question
+//wrong answer will deduct time from timercount variable
+//right answer just moves on to next question
+
+
+//no more questions left end the game
+//end game with show current time as score and a text box to ender initials
+
+//the text box should have button with listener so when you submit it saves the score and initials to local storage
+
+//create question variable with array of question objects
+
+var question1 = [
+    {
+        question: "What does the fox say?",
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
+        correctAnswer: ["All of these"]
+    }
+]
+var question2 = [
+    {
+        question: "What does the fox say?",
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
+        correctAnswer: ["All of these"]
+    }
+]
+var question3 = [
+    {
+        question: "What does the fox say?",
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
+        correctAnswer: ["All of these"]
+    }
+]
+var question4 = [
+    {
+        question: "What does the fox say?",
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
+        correctAnswer: ["All of these"]
+    }
+]
+var question5 = [
+    {
+        question: "What does the fox say?",
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
+        correctAnswer: ["All of these"]
+    }
+]
+
+var questionsArray = ["question1", "question2", "question3", "question4", "question5"]
+
+
+
+var questionsCounter = 0
+var timerCounter = 100
+
+
+// Start Button hides welcome message and displays first question
+//   function startGame() {
+//   set attribute of welcome div to hide
+//   set attribute of question div to visible
+//   
+//   update h1 textcontent with questions[questionsCounter].question
+//   loop through and create possible answer buttons with the values of the buttons being each of the questions[questionsCounter].possibleAnswers
+//   add listener to possibleAnswers button
+    possibleAnswerBtn.addEventListener("click", function(event) {
+        var selectedAnswer = event.target
+//      get value of the target
+//compare the value to questions[questionsCounter].correctAnswer
+//   if(questions[questionsCounter].correctAnswer !== selectedAnswer.value) {
+//    deduct 10 from timerCounter -10 questionsCounter ++
+//  return startGame() 
+
+}
+//check to see if time is <= 0 lose game or if time is >0 and there are no more questions left, you win the game
+})
+// var initialsInputVal = document.querySelector("#initlasInput").value
+
+
+// save the current timeCounter to localStorage and the initials from the forms element
+// save initals and score as a stringified object into local storage
+//}
+// on game load pull localStorage and update text content with current high scires already in localStorage
