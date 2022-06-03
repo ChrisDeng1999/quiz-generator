@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+body {
+    min-height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background-color: rgb(163, 161, 161);
+}
 header {
     top: 0;
     width: 100%;
@@ -26,4 +33,36 @@ header nav a {
 header a:hover {
     color: white;
     text-decoration: underline;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 90vh;
+    text-align: center;
+    word-wrap: break-word;
+    font-size: 30px;
+}
+
+main section div p {
+    padding: 20px 0;
+    width: 300px;
+    font-size: 20px;
+    color: white;
+}
+
+button {
+    font-size: 20px;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(85, 231, 141);
+}
+
+footer {
+    position: sticky;
+    top: 100vh;
+    text-align: center;
+    font-size: 30px;
 }
