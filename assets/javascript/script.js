@@ -131,30 +131,30 @@ var question1 = [
 ]
 var question2 = [
     {
-        question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
-        correctAnswer: ["All of these"]
+        question: "What is 9+10",
+        possibleAnswers: ["21", "20", "19","18", "17"],
+        correctAnswer: ["21"]
     }
 ]
 var question3 = [
     {
-        question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
-        correctAnswer: ["All of these"]
+        question: "How many licks does it take to get to the center of a tootsie pop",
+        possibleAnswers: ["The world will forever know.", "You may never know.", "The world may never know.","You will forever know.", "None of these"],
+        correctAnswer: ["The world may never know."]
     }
 ]
 var question4 = [
     {
-        question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
-        correctAnswer: ["All of these"]
+        question: "Why did the monkey fall off the branch?",
+        possibleAnswers: ["Because it fell asleep", "Because it fell", "Because it was told to do flexbox", "Because it died", "Because it slipped"],
+        correctAnswer: ["Because it died"]
     }
 ]
 var question5 = [
     {
-        question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
-        correctAnswer: ["All of these"]
+        question: "What do cows drink?",
+        possibleAnswers: ["Milk", "Water", "The blood of an orphan", "The blood of a baby", "The blood of a cow"],
+        correctAnswer: ["Water"]
     }
 ]
 
