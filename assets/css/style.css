@@ -19,10 +19,14 @@ header {
     display: flex;
     justify-content: space-between;
 }
-header h1 {
+
+header div,
+h1 {
+    display: flex;
+    padding-right: 30px;
     font-size: 36px;
-    padding-right: 90px;
 }
+
 header nav a {
     font-size: 36px;
     text-decoration: none;
