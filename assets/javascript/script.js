@@ -1,3 +1,28 @@
+var timeCounter = document.querySelector(".timer-count");
+var timeSecond = 100;
+
+
+
+function startGame () {
+    const countDown = setInterval(() => {
+        timeSecond--;
+        timeCounter.innerHTML = timeSecond;
+        if (timeSecond === 0 ) {
+            clearInterval(countDown)
+        }
+    }, 1000);
+}
+
+startTimer();
+
+
+
+
+
+
+
+
+
 //Global Variable references
 //--------------------------------
 //questions div
@@ -48,16 +73,16 @@
 
 //add event listener to the answer choices (on click) or div that holds the answer choices event.target matches the correctAnswer
 
-var selectedAns = event.target
+// var selectedAns = event.target
 
-if(selectedAns === question[0].correctAnswer) {
-    //provide coorect feedback
-    //DOM add an element
-} else {
-    //incorrect
-    //penalize timer/ global time variable subtract time
+// if(selectedAns === question[0].correctAnswer) {
+//     //provide coorect feedback
+//     //DOM add an element
+// } else {
+//     //incorrect
+//     //penalize timer/ global time variable subtract time
 
-}
+// }
 
 //start timer function
 //time--
@@ -174,17 +199,17 @@ var timerCounter = 100
 //   update h1 textcontent with questions[questionsCounter].question
 //   loop through and create possible answer buttons with the values of the buttons being each of the questions[questionsCounter].possibleAnswers
 //   add listener to possibleAnswers button
-    possibleAnswerBtn.addEventListener("click", function(event) {
-        var selectedAnswer = event.target
+    // possibleAnswerBtn.addEventListener("click", function(event) {
+    //     var selectedAnswer = event.target
 //      get value of the target
 //compare the value to questions[questionsCounter].correctAnswer
 //   if(questions[questionsCounter].correctAnswer !== selectedAnswer.value) {
 //    deduct 10 from timerCounter -10 questionsCounter ++
 //  return startGame() 
 
-}
+// }
 //check to see if time is <= 0 lose game or if time is >0 and there are no more questions left, you win the game
-})
+// })
 // var initialsInputVal = document.querySelector("#initlasInput").value
 
 
