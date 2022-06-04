@@ -1,19 +1,27 @@
 var timeCounter = document.querySelector(".timer-count");
 var timeSecond = 100;
+var timer;
 
 
 
-function startGame () {
-    const countDown = setInterval(() => {
+
+
+
+function startTimer () {
+    timer = setInterval(() => {
         timeSecond--;
         timeCounter.innerHTML = timeSecond;
-        if (timeSecond === 0 ) {
-            clearInterval(countDown)
+        if (timeSecond >= 0 ) {
+            clearInterval(timer);
+            // endGame() Needs to be added
         }
     }, 1000);
 }
 
-startTimer();
+
+// function endGame () {
+
+// }
 
 
 
