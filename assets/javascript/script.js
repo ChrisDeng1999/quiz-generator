@@ -1,17 +1,22 @@
 var timeCounter = document.querySelector(".timer-count");
 var timeSecond = 100;
 var timer;
+var startButton = document.querySelector(".start-button");
 
 
 
+function startGame () {
+    startTimer();
+}
 
+startButton.addEventListener("click", startGame);
 
 
 function startTimer () {
     timer = setInterval(() => {
         timeSecond--;
         timeCounter.innerHTML = timeSecond;
-        if (timeSecond >= 0 ) {
+        if (timeSecond === 0 ) {
             clearInterval(timer);
             // endGame() Needs to be added
         }
@@ -158,15 +163,15 @@ function startTimer () {
 var question1 = [
     {
         question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Wa-pa-pa-pa-pa-pa-pow!", "Joff-tchoff-tchoffo-tchoffo-tchoff!","Hatee-hatee-hatee-ho!", "All of these"],
-        correctAnswer: ["All of these"]
+        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Sing-ding-ding-ding-dingeringeding!", "Screech","Scream", "Shriek"],
+        correctAnswer: ["Ring-ding-ding-ding-dingeringeding!"]
     }
 ]
 var question2 = [
     {
-        question: "What is 9+10",
-        possibleAnswers: ["21", "20", "19","18", "17"],
-        correctAnswer: ["21"]
+        question: "Which of these are not an Explorer class in MapleStory",
+        possibleAnswers: ["Warrior", "Archer", "Magician","Thief", "Pirate"],
+        correctAnswer: ["Archer"]
     }
 ]
 var question3 = [
@@ -196,7 +201,6 @@ var questionsArray = ["question1", "question2", "question3", "question4", "quest
 
 
 var questionsCounter = 0
-var timerCounter = 100
 
 
 // Start Button hides welcome message and displays first question

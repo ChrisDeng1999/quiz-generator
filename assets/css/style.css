@@ -21,7 +21,7 @@ header {
 }
 
 header div,
-h1 {
+header div h1 {
     display: flex;
     padding-right: 30px;
     font-size: 36px;
@@ -62,6 +62,11 @@ button {
     height: 30px;
     width: 200px;
     background-color: rgb(85, 231, 141);
+    box-shadow: 4px 4px 5px rgb(48, 48, 48);
+}
+
+button:active {
+    box-shadow: none;
 }
 
 footer {
