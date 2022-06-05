@@ -70,12 +70,12 @@ function startGame () {
     randomQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerEl.classList.remove("hide")
-    setNextQuestion()
+    showNextQuestion()
     startTimer()
 }
 
 
-function setNextQuestion () {
+function showNextQuestion () {
     resetQuestions()
     showQuestion(randomQuestions[currentQuestionIndex])
 }
@@ -90,8 +90,17 @@ function showQuestion (question) {
             button.dataset.correct = answer.correct
         }
         button.addEventListener("click", selectAnswer)
+        button.addEventListener("click", checkQuestion)
         answerButtonEl.appendChild(button)
+        
     });
+}
+
+function checkQuestion(e) {
+    var userChoice = e.target.dataset.correct;
+    if (userChoice !== true) {
+        timeSecond -= 20;;
+    }
 }
 
 function resetQuestions() {
@@ -101,15 +110,15 @@ function resetQuestions() {
     }
 }
 
-function selectAnswer (event) {
-    var selectedBtn = event.target
-    var correct = selectedBtn.dataset.correct
+function selectAnswer () {
     Array.from(answerButtonEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
     if (randomQuestions.length > currentQuestionIndex + 1) {
         nextButton.classList.remove("hide")
     }   else {
+        // Need to change restart
+        
         startButton.innerText = "Restart"
         startButton.classList.remove("hide")
     }
@@ -132,7 +141,7 @@ function clearStatusClass (element) {
 startButton.addEventListener("click", startGame);
 nextButton.addEventListener("click", () => {
     currentQuestionIndex++
-    setNextQuestion()
+    showNextQuestion()
 })
 
 
@@ -140,7 +149,7 @@ function startTimer () {
     timer = setInterval(() => {
         timeSecond--;
         timeCounter.innerHTML = timeSecond;
-        if (timeSecond === 0 ) {
+        if (timeSecond <= 0 || currentQuestionIndex >= questionEl.length) {
             clearInterval(timer);
         }
     }, 1000);
@@ -283,47 +292,6 @@ function startTimer () {
 
 //create question variable with array of question objects
 
-var question1 = [
-    {
-        question: "What does the fox say?",
-        possibleAnswers: ["Ring-ding-ding-ding-dingeringeding!", "Sing-ding-ding-ding-dingeringeding!", "Screech","Scream", "Shriek"],
-        correctAnswer: ["Ring-ding-ding-ding-dingeringeding!"]
-    }
-]
-var question2 = [
-    {
-        question: "Which of these are not an Explorer class in MapleStory",
-        possibleAnswers: ["Warrior", "Archer", "Magician","Thief", "Pirate"],
-        correctAnswer: ["Archer"]
-    }
-]
-var question3 = [
-    {
-        question: "How many licks does it take to get to the center of a tootsie pop",
-        possibleAnswers: ["The world will forever know.", "You may never know.", "The world may never know.","You will forever know.", "None of these"],
-        correctAnswer: ["The world may never know."]
-    }
-]
-var question4 = [
-    {
-        question: "Why did the monkey fall off the branch?",
-        possibleAnswers: ["Because it fell asleep", "Because it fell", "Because it was told to do flexbox", "Because it died", "Because it slipped"],
-        correctAnswer: ["Because it died"]
-    }
-]
-var question5 = [
-    {
-        question: "What do cows drink?",
-        possibleAnswers: ["Milk", "Water", "The blood of an orphan", "The blood of a baby", "The blood of a cow"],
-        correctAnswer: ["Water"]
-    }
-]
-
-var questionsArray = ["question1", "question2", "question3", "question4", "question5"]
-
-
-
-var questionsCounter = 0
 
 
 // Start Button hides welcome message and displays first question
