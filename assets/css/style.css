@@ -99,9 +99,6 @@ main.wrong {
     padding: 5px 10px;
     outline: none;
     font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .btn:hover {
@@ -117,14 +114,26 @@ main.wrong {
     border-color: var(--red);
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .start-btn,
 .next-btn {
     font-size: 20px;
     font-weight: bold;
     padding: 10px 20px;
 }
+.start-btn {
+    margin-left: 320px;
+    margin-top: 20px;
+}
 
-
+.title {
+    text-align: center;
+}
 .intro {
     font-size: 20px;
 }
