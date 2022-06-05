@@ -1,7 +1,6 @@
 var timeCounter = document.querySelector(".timer-count");
 var timeSecond = 100;
 var timer;
-var wrongTime = 15;
 var correct;
 var startButton = document.querySelector(".start-btn");
 var nextButton = document.querySelector(".next-btn");
@@ -65,6 +64,48 @@ var questions = [
 ]
 
 
+// var questions = [
+//     {
+//         question: "What does the fox say?",
+//         answers: ["Sing-ding-ding-ding-dingeringeding!", "Ring-ding-ding-ding-dingeringeding!", "Screech", "Scream", "Shriek"],
+//     },
+//     {
+//         question: "Which of these are not an Explorer class in MapleStory",
+//         answers: ["Archer", "Warrior", "Thief", "Magician", "Pirate"],
+//     },
+//     {
+//         question: "How many licks does it take to get to the center of a tootsie pop",
+//         answers: ["The world will forever know.", "You may never know.", "The world may never know.", "You will forever know.", "You can never know."],
+
+//     },
+//     {
+//         question: "Why did the monkey fall off the branch?",
+//         answers: [
+//             { text: "Because it fell asleep", correct: false },
+//             { text: "Because it slipped", correct: false },
+//             { text: "Because it fell", correct: false },
+//             { text: "Because it was told to do flexbox", correct: false },
+//             { text: "Because it died", correct: true } 
+//         ], 
+//     },
+//     {
+//         question: "What do cows drink?",
+//         answers: [
+//             { text: "Milk", correct: false },
+//             { text: "The blood of a baby", correct: false },
+//             { text: "The blood of an orphan", correct: false },
+//             { text: "Water", correct: true },
+//             { text: "The blood of a cow", correct: false } 
+//         ], 
+//     }
+// ]
+
+
+// var answers = new Set(["Ring-ding-ding-ding-dingeringeding!", "Archer", "The world may never know.", "Water", "Because it died"]);
+
+
+
+
 function startGame () {
     startButton.classList.add("hide")
     hideTitle.classList.add("hide")
@@ -103,12 +144,12 @@ function resetQuestions() {
     }
 }
 
-function selectAnswer (e) {
-    var selectedBtn = e.target
-    var correctQ = selectedBtn.dataset.correct
-    if (correctQ !== true) {
-        timeSecond -= wrongTime
-    }
+function selectAnswer () {
+    // var correctQ = button;
+    // localStorage.setItem("answer", JSON.stringify(currentQuestionIndex));
+    localStorage.setItem("time", JSON.stringify(timeSecond));
+    
+    
     Array.from(answerButtonEl.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
@@ -118,11 +159,12 @@ function selectAnswer (e) {
         // Need to change restart 
         startButton.innerText = "Restart"
         startButton.classList.remove("hide")
+        nextButton.classList.add("hide")
+        hideTitle.classList.remove("hide")
+        hideIntro.classList.remove("hide")
+        questionContainerEl.classList.add("hide")
     }
-    console.log(correctQ);
 }
-
-
 
 function setStatusClass (element, correct) {
     clearStatusClass(element)
@@ -154,4 +196,7 @@ function startTimer () {
         }
     }, 1000);
 }
+
+
+
 
