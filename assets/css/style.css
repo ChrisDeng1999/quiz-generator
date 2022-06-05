@@ -1,20 +1,30 @@
-/* * {
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
+:root {
+    --green: #07d300;
+    --red: #ee0000;
+    --grey: #807e7e;
+    --lightgreen: rgb(85, 231, 141);
+    --white : white;
+    --black: black;
+  }
 
 body {
     min-height: 100vh;
     width: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-    background-color: rgb(163, 161, 161);
+    background-color: var(--grey);
 }
 header {
     top: 0;
     width: 100%;
     padding: 30px;
-    background-color: rgb(85, 231, 141);
+    background-color: var(--lightgreen);
     position: absolute;
     display: flex;
     justify-content: space-between;
@@ -31,66 +41,16 @@ header nav a {
     font-size: 36px;
     text-decoration: none;
     display: inline-block;
-    color: black;
+    color: var(--black);
     font-weight: bold;
 }
 header a:hover {
-    color: white;
+    color: var(--white);
     text-decoration: underline;
 }
 
 main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 90vh;
-    text-align: center;
-    word-wrap: break-word;
-    font-size: 30px;
-}
-
-main section div p {
-    padding: 20px 0;
-    width: 300px;
-    font-size: 20px;
-    color: white;
-}
-
-button {
-    font-size: 20px;
-    height: 30px;
-    width: 200px;
-    background-color: rgb(85, 231, 141);
-    box-shadow: 4px 4px 5px rgb(48, 48, 48);
-}
-
-button:active {
-    box-shadow: none;
-} */
-
-/* footer {
-    position: sticky;
-    top: 100vh;
-    text-align: center;
-    font-size: 30px;
-} */
-
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-:root {
-    --green: #07d300;
-    --red: #ee0000;
-    --grey: #807e7e;
-    --lightgreen: rgb(85, 231, 141);
-  }
-
-body {
     background-color: var(--grey);
-    padding: 0;
-    margin: 0;
     display: flex;
     width: 100%;
     height: 100vh;
@@ -98,21 +58,31 @@ body {
     align-items: center;
 }
 
-body.correct {
+main.correct {
     background-color: var(--green);
 }
 
-body.wrong {
+main.wrong {
     background-color: var(--red);
 }
 
 .container {
-    width: 500px;
+    width: 800px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     max-width: 80%;
-    background-color: white;
+    background-color: var(--white);
     border-radius: 5px;
     padding: 10px;
     box-shadow: 0 0 10px 2px;
+    font-size: 34px;
+}
+
+#quiz-questions {
+    width: 700px;
 }
 
 .btn-grid {
@@ -128,10 +98,14 @@ body.wrong {
     border-radius: 5px;
     padding: 5px 10px;
     outline: none;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .btn:hover {
-    border-color: black;
+    border-color: var(--black);
 }
 
 .btn.correct {
@@ -150,12 +124,18 @@ body.wrong {
     padding: 10px 20px;
 }
 
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+.intro {
+    font-size: 20px;
 }
 
 .hide {
     display: none;
+}
+
+footer {
+    position: sticky;
+    top: 100vh;
+    text-align: center;
+    font-size: 30px;
 }

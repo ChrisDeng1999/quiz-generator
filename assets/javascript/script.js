@@ -5,6 +5,8 @@
 
 var startButton = document.querySelector(".start-btn");
 var nextButton = document.querySelector(".next-btn");
+var hideTitle = document.querySelector(".title");
+var hideIntro = document.querySelector(".intro");
 var questionContainerEl = document.getElementById("quiz-questions")
 var randomQuestions, currentQuestionIndex
 var questionEl = document.getElementById("question")
@@ -23,8 +25,8 @@ var questions = [
     {
         question: "Which of these are not an Explorer class in MapleStory",
         answers: [
-            { text: "Warrior", correct: false },
             { text: "Archer", correct: true },
+            { text: "Warrior", correct: false },
             { text: "Magician", correct: false },
             { text: "Thief", correct: false },
             { text: "Pirate", correct: false } 
@@ -34,8 +36,8 @@ var questions = [
         question: "How many licks does it take to get to the center of a tootsie pop",
         answers: [
             { text: "The world will forever know.", correct: false },
-            { text: "The world may never know.", correct: true },
             { text: "You may never know.", correct: false },
+            { text: "The world may never know.", correct: true },
             { text: "You will forever know.", correct: false },
             { text: "You can never know.", correct: false } 
         ], 
@@ -44,19 +46,19 @@ var questions = [
         question: "Why did the monkey fall off the branch?",
         answers: [
             { text: "Because it fell asleep", correct: false },
-            { text: "Because it died", correct: true },
+            { text: "Because it slipped", correct: false },
             { text: "Because it fell", correct: false },
             { text: "Because it was told to do flexbox", correct: false },
-            { text: "Because it slipped", correct: false } 
+            { text: "Because it died", correct: true } 
         ], 
     },
     {
         question: "What do cows drink?",
         answers: [
             { text: "Milk", correct: false },
-            { text: "Water", correct: true },
-            { text: "The blood of an orphan", correct: false },
             { text: "The blood of a baby", correct: false },
+            { text: "The blood of an orphan", correct: false },
+            { text: "Water", correct: true },
             { text: "The blood of a cow", correct: false } 
         ], 
     }
@@ -65,6 +67,8 @@ var questions = [
 
 function startGame () {
     startButton.classList.add("hide")
+    hideTitle.classList.add("hide")
+    hideIntro.classList.add("hide")
     randomQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerEl.classList.remove("hide")
