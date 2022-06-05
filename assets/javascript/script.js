@@ -63,6 +63,65 @@ var questions = [
 ]
 
 
+function startGame () {
+    startButton.classList.add("hide")
+    randomQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
+    questionContainerEl.classList.remove("hide")
+    setNextQuestion()
+}
+
+
+function setNextQuestion () {
+    resetQuestions()
+    showQuestion(randomQuestions[currentQuestionIndex])
+}
+
+function showQuestion (question) {
+    questionEl.innerText = question.question
+    question.answers.forEach(answer => {
+        var button = document.createElement("button")
+        button.innerText = answer.text
+        button.classList.add("btn")
+        if (answer.correct) {
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener("click", selectAnswer)
+        answerButtonEl.appendChild(button)
+    });
+}
+
+function resetQuestions() {
+    nextButton.classList.add("hide")
+    while (answerButtonEl.firstChild) {
+        answerButtonEl.removeChild(answerButtonEl.firstChild)
+    }
+}
+
+function selectAnswer (event) {
+    var selectedBtn = event.target
+    var correct = selectedBtn.dataset.correct
+    Array.from(answerButtonEl.children).forEach(button => {
+        setStatusClass(button, button.dataset.correct)
+    })
+    if (randomQuestions.length > currentQuestionIndex + 1) {
+        nextButton.classList.remove("hide")
+    }   else {
+        startButton.innerText = "Restart"
+        startButton.classList.remove("hide")
+    }
+}
+
+
+
+startButton.addEventListener("click", startGame);
+nextButton.addEventListener("click", () => {
+    currentQuestionIndex++
+    setNextQuestion()
+})
+
+
+
 
 
 
