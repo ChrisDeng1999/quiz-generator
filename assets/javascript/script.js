@@ -1,27 +1,95 @@
-var timeCounter = document.querySelector(".timer-count");
-var timeSecond = 100;
-var timer;
-var startButton = document.querySelector(".start-button");
+// var timeCounter = document.querySelector(".timer-count");
+// var timeSecond = 100;
+// var timer;
+// var startButton = document.querySelector(".start-button");
+
+var startButton = document.querySelector(".start-btn");
+var nextButton = document.querySelector(".next-btn");
+var questionContainerEl = document.getElementById("quiz-questions")
+var randomQuestions, currentQuestionIndex
+var questionEl = document.getElementById("question")
+var answerButtonEl = document.getElementById("answer-buttons")
+var questions = [
+    {
+        question: "What does the fox say?",
+        answers: [
+            { text: "Sing-ding-ding-ding-dingeringeding!", correct: false },
+            { text: "Ring-ding-ding-ding-dingeringeding!", correct: true },
+            { text: "Screech", correct: false },
+            { text: "Scream", correct: false },
+            { text: "Shriek", correct: false } 
+        ], 
+    },
+    {
+        question: "Which of these are not an Explorer class in MapleStory",
+        answers: [
+            { text: "Warrior", correct: false },
+            { text: "Archer", correct: true },
+            { text: "Magician", correct: false },
+            { text: "Thief", correct: false },
+            { text: "Pirate", correct: false } 
+        ], 
+    },
+    {
+        question: "How many licks does it take to get to the center of a tootsie pop",
+        answers: [
+            { text: "The world will forever know.", correct: false },
+            { text: "The world may never know.", correct: true },
+            { text: "You may never know.", correct: false },
+            { text: "You will forever know.", correct: false },
+            { text: "You can never know.", correct: false } 
+        ], 
+    },
+    {
+        question: "Why did the monkey fall off the branch?",
+        answers: [
+            { text: "Because it fell asleep", correct: false },
+            { text: "Because it died", correct: true },
+            { text: "Because it fell", correct: false },
+            { text: "Because it was told to do flexbox", correct: false },
+            { text: "Because it slipped", correct: false } 
+        ], 
+    },
+    {
+        question: "What do cows drink?",
+        answers: [
+            { text: "Milk", correct: false },
+            { text: "Water", correct: true },
+            { text: "The blood of an orphan", correct: false },
+            { text: "The blood of a baby", correct: false },
+            { text: "The blood of a cow", correct: false } 
+        ], 
+    }
+]
 
 
 
-function startGame () {
-    startTimer();
-}
-
-startButton.addEventListener("click", startGame);
 
 
-function startTimer () {
-    timer = setInterval(() => {
-        timeSecond--;
-        timeCounter.innerHTML = timeSecond;
-        if (timeSecond === 0 ) {
-            clearInterval(timer);
-            // endGame() Needs to be added
-        }
-    }, 1000);
-}
+// function startGame () {
+//     startTimer();
+// }
+
+// startButton.addEventListener("click", startGame);
+
+// function setNextQuestion () {
+
+// }
+
+// function selectAnswer () {
+
+// }
+
+// function startTimer () {
+//     timer = setInterval(() => {
+//         timeSecond--;
+//         timeCounter.innerHTML = timeSecond;
+//         if (timeSecond === 0 ) {
+//             clearInterval(timer);
+//             // endGame() Needs to be added
+//         }
+//     }, 1000);
+// }
 
 
 // function endGame () {
