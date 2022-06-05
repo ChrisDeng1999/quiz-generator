@@ -1,8 +1,6 @@
-// var timeCounter = document.querySelector(".timer-count");
-// var timeSecond = 100;
-// var timer;
-// var startButton = document.querySelector(".start-button");
-
+var timeCounter = document.querySelector(".timer-count");
+var timeSecond = 100;
+var timer;
 var startButton = document.querySelector(".start-btn");
 var nextButton = document.querySelector(".next-btn");
 var hideTitle = document.querySelector(".title");
@@ -73,6 +71,7 @@ function startGame () {
     currentQuestionIndex = 0
     questionContainerEl.classList.remove("hide")
     setNextQuestion()
+    startTimer()
 }
 
 
@@ -137,34 +136,15 @@ nextButton.addEventListener("click", () => {
 })
 
 
-
-
-
-
-// function startGame () {
-//     startTimer();
-// }
-
-// startButton.addEventListener("click", startGame);
-
-// function setNextQuestion () {
-
-// }
-
-// function selectAnswer () {
-
-// }
-
-// function startTimer () {
-//     timer = setInterval(() => {
-//         timeSecond--;
-//         timeCounter.innerHTML = timeSecond;
-//         if (timeSecond === 0 ) {
-//             clearInterval(timer);
-//             // endGame() Needs to be added
-//         }
-//     }, 1000);
-// }
+function startTimer () {
+    timer = setInterval(() => {
+        timeSecond--;
+        timeCounter.innerHTML = timeSecond;
+        if (timeSecond === 0 ) {
+            clearInterval(timer);
+        }
+    }, 1000);
+}
 
 
 // function endGame () {
