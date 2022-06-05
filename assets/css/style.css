@@ -67,8 +67,8 @@ main.wrong {
 }
 
 .container {
-    width: 800px;
-    height: 300px;
+    width: 900px;
+    height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -127,7 +127,7 @@ main.wrong {
     padding: 10px 20px;
 }
 .start-btn {
-    margin-left: 320px;
+    margin-left: 370px;
     margin-top: 20px;
 }
 
